@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tech Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>Smart Tech Store</h2>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="menu">
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+    </nav>
+    <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+</header>
+
+<section class="search">
+    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+</section>
+
+<section class="controls">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('mobile')">Mobiles</button>
+    <button onclick="filterProducts('laptop')">Laptops</button>
+</section>
+
+<section class="products" id="products">
+    <div class="product mobile">
+        <h3>Smartphone</h3>
+        <p class="price">₹15,000</p>
+        <button onclick="toggleDetails(this)">View Details</button>
+        <p class="details">6GB RAM, 128GB Storage</p>
+        <button onclick="addToCart(15000)">Add to Cart</button>
+        <button onclick="removeFromCart(15000)">Remove</button>
+    </div>
+
+    <div class="product laptop">
+        <h3>Laptop</h3>
+        <p class="price">₹45,000</p>
+        <button onclick="toggleDetails(this)">View Details</button>
+        <p class="details">Intel i5, 16GB RAM</p>
+        <button onclick="addToCart(45000)">Add to Cart</button>
+        <button onclick="removeFromCart(45000)">Remove</button>
+    </div>
+
+    <div class="product mobile">
+        <h3>Android Phone</h3>
+        <p class="price">₹18,000</p>
+        <button onclick="toggleDetails(this)">View Details</button>
+        <p class="details">AMOLED Display, 5G</p>
+        <button onclick="addToCart(18000)">Add to Cart</button>
+        <button onclick="removeFromCart(18000)">Remove</button>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About Our Store</h2>
+    <p>
+        Smart Tech Store is a demo e-commerce website built using HTML, CSS,
+        and JavaScript to demonstrate responsive design and interactivity.
+    </p>
+</section>
+
+<footer>
+    <p>Items in Cart: <span id="cartCount">0</span></p>
+    <p>Total Price: ₹<span id="totalPrice">0</span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

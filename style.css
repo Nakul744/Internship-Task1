@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: #222;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+}
+
+.dark-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+
+/* Search */
+.search {
+    background: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.search input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Controls */
+.controls {
+    text-align: center;
+    padding: 15px;
+}
+
+.controls button {
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Products */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product button {
+    margin: 6px;
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    background: #222;
+    color: white;
+}
+
+.product button:last-child {
+    background: #b00020;
+}
+
+.details {
+    display: none;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* About */
+.about {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Dark Mode */
+.dark {
+    background: #302f2f;
+    color: white;
+}
+
+.dark header,
+.dark footer {
+    background: rgb(39, 37, 37);
+}
+
+.dark .product,
+.dark .search,
+.dark .about {
+    background: #434343;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #222;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .search input {
+        width: 90%;
+    }
+}
